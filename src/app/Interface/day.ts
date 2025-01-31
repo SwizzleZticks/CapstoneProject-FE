@@ -12,6 +12,6 @@ export interface Day {
     sunset:         string;     // Sunset time
     humidity:       number;     // Humidity 
     description:    string;     // Weather Conditions
-    precipProb:     number;     // Precipitation %
+    precipProb:     number;     // Precipitation %  
     hours:          Hour[];     // List of hours in the day        // Will need to import 'Hour' from Hour Component
 }
