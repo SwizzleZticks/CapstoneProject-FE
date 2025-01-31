@@ -1,4 +1,5 @@
 import { DailyWeatherComponent } from "../component/daily-weather/daily-weather.component";
+import { Hour } from "./hour"
 
 export interface Day {
     dateTime:       string;     // Date and Time

@@ -5,5 +5,4 @@ export interface Location {
     city:           string;     // Requested City
     state:          string;     // Requested state
     users:           User[];    // Represents the ICollection<User> from Backend
-    
 }
