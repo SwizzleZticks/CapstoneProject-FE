@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <ul class="nav-list">
+    <li>
+      <a href="/" class="nav-item active">Today</a>
+    </li>
+    <li>
+      <a href="/" class="nav-item active">Hourly</a>
+    </li>
+    <li>
+      <a href="/" class="nav-item active">7-Day</a>
+    </li>
+  </ul>
+
+  <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form">
+    <input name="username"
+           [(ngModel)]="model.username"
+           class="form-input"
+           placeholder="Username">
+    <input name="password"
+           [(ngModel)]="model.password"
+           class="form-input"
+           placeholder="Password"
+           type="password">
+    <button class="form-button" type="submit">Login</button>
+  </form>
+</nav>
