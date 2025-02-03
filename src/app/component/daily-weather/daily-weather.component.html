@@ -11,16 +11,17 @@
         <div class="weather-info">
           <div class="weather-details">
             <h3>{{ weather.condition }}</h3>
-            <p>Date:                {{ weather.date | date:'fullDate' }}</p>
-            <p>Low Temperature:     {{ <weather class="tempLow"></weather> }}°F</p>    
-            <p>High Temperature:    {{ <weather.tempHigh></weather> }}°F</p>
-            <p>Feels Like:          {{<weather.feelsLike></weather> }}°F</p>
-            <p>Wind Speed:          {{<weather.windSpeed></weather> }} mph</p>
-            <p>Wind Direction:      {{<weather.windDir></weather> }}</p>
-            <p>Sunrise Time:        {{<weather.sunrise></weather> }}</p>
-            <p>Sunset Time:         {{<weather.sunset></weather> }}</p>
-            <p>Humidity:            {{ weather.humidity }}%</p>
-            <p>Description:         {{ weather.description }}</p>
+            <p>Date:                {{ weather.dateTime     }}</p>
+            <p>Low Temperature:     {{ weather.lowTemp      }}°F</p>    
+            <p>High Temperature:    {{ weather.tempHigh     }}°F</p>
+            <p>Feels Like:          {{ weather.feelsLike    }}°F</p>
+            <p>Wind Speed:          {{ weather.windSpeed    }} mph</p>
+            <p>Wind Direction:      {{ weather.windDir      }}</p>
+            <p>Sunrise Time:        {{ weather.sunrise      }}</p>
+            <p>Sunset Time:         {{ weather.sunset       }}</p>
+            <p>Humidity:            {{ weather.humidity     }}%</p>
+            <p>Description:         {{ weather.description  }}</p>
+            <p>Average:             {{ weather.average      }} °F</p>
           </div>
         </div>
       </div>

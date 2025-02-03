@@ -10,8 +10,6 @@ export class DailyWeatherComponent implements OnInit {
   weather: any;
   location: string = "Detroit, MI"
 
-  constructor() {}
-
   ngOnInit(): void {
     this.weather = {
       dateTime:     new Date(),    // Date and Time
