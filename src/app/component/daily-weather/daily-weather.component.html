@@ -6,4 +6,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="weather-container">
+        <h2>Weather for {{ location }}</h2>
+        <div class="weather-info">
+          <div class="weather-details">
+            <h3>{{ weather.condition }}</h3>
+            <p>Date:                {{ weather.date | date:'fullDate' }}</p>
+            <p>Low Temperature:     {{ <weather class="tempLow"></weather> }}°F</p>    
+            <p>High Temperature:    {{ <weather.tempHigh></weather> }}°F</p>
+            <p>Feels Like:          {{<weather.feelsLike></weather> }}°F</p>
+            <p>Wind Speed:          {{<weather.windSpeed></weather> }} mph</p>
+            <p>Wind Direction:      {{<weather.windDir></weather> }}</p>
+            <p>Sunrise Time:        {{<weather.sunrise></weather> }}</p>
+            <p>Sunset Time:         {{<weather.sunset></weather> }}</p>
+            <p>Humidity:            {{ weather.humidity }}%</p>
+            <p>Description:         {{ weather.description }}</p>
+          </div>
+        </div>
+      </div>
 </body>

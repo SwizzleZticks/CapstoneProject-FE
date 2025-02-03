@@ -1,0 +1,31 @@
+.weather-container {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  .weather-info {
+    display: flex;
+    align-items: center;
+  }
+  
+   
+  .weather-details {
+    margin-left: 20px;
+  }
+  
+  .weather-details h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+  }
+  
+  .weather-details p {
+    margin: 4px 0;
+    font-size: 0.9em;
+    color: #333;
+  }
