@@ -17,8 +17,8 @@ body {
   background-color: #181818;
   z-index: 50;
   display: flex;
-  justify-content: space-between; /* Ensures items are spread across */
-  align-items: center; /* Vertically center the items */
+  justify-content: space-between;
+  align-items: center;
   padding: 5px 10px;
   box-sizing: border-box;
 }
@@ -50,7 +50,7 @@ body {
 .login-form {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align the items horizontally in the form */
+  justify-content: flex-start;
 }
 
 .form-input {
