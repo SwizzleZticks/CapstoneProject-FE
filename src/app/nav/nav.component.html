@@ -11,6 +11,25 @@
     </li>
   </ul>
 
+
+  @if (loggedIn) {
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle" (click)="toggleDropdown()">
+        Welcome {{ model.username }}
+      </a>
+
+      <span class="dropdown-arrow" [class.rotate]="isDropdownOpen" (click)="toggleDropdown()">▼</span>
+
+      <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+        <a class="dropdown-item">Edit Profile</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+        <div class="dropdown-divider"></div>
+      </div>
+    </div>
+  }
+
+  @if(!loggedIn) {
   <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form">
     <input name="username"
            [(ngModel)]="model.username"
@@ -23,4 +42,5 @@
            type="password">
     <button class="form-button" type="submit">Login</button>
   </form>
+  }
 </nav>

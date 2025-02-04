@@ -82,3 +82,79 @@ body {
 .form-button:hover {
   background-color: lightseagreen;
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  padding: 10px 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.2s ease, color 0.2s ease
+}
+
+.dropdown-toggle:hover {
+  color: lightseagreen;
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  color:white;
+}
+
+.dropdown-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-arrow:hover {
+  color: lightseagreen;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: lightseagreen;
+  border-radius: 4px;
+  transition: 0.2s ease, color 0.2s ease
+}
+
+.dropdown-divider {
+  border-top: 1px solid #ddd;
+}
