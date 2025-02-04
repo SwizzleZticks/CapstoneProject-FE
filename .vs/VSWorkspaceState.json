@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\component",
+    "\\src\\app\\component\\daily-weather"
+  ],
+  "SelectedNode": "\\src\\app\\component\\daily-weather\\daily-weather.component.css",
+  "PreviewInSolutionExplorer": false
+}
