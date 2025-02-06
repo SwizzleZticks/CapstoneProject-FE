@@ -8,26 +8,35 @@ import { Location } from '../interfaces/location';
 })
 export class LocationService {
 
-  private http = inject(HttpClient);
-  baseUrl = 'https://localhost:7074/api/locations/';
+  private baseUrl = 'https://localhost:7074/api/locations'; 
+
+  private states: string[] = [
+    'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID',
+    'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS',
+    'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+    'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV',
+    'WI', 'WY'
+  ];
+
+  constructor(private http: HttpClient) {}
 
   getAllLocations(): Observable<Location[]> {
     return this.http.get<Location[]>(this.baseUrl);
   }
 
   getLocationById(id: number): Observable<Location> {
-    return this.http.get<Location>(`${this.baseUrl}${id}`);
+    return this.http.get<Location>(`${this.baseUrl}/${id}`);
   }
 
   addLocation(newLocation: Location): Observable<Location> {
     return this.http.post<Location>(this.baseUrl, newLocation);
   }
 
- /* updateLocation(updatedLocation: Location): Observable<Location> {
-    return this.http.put<Location>(`${this.baseUrl}${updatedLocation.locationId}`, updatedLocation);
-  }*/
-
   deleteLocation(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}${id}`);
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+
+  getStates(): string[] {
+    return this.states;
   }
 }
