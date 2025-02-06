@@ -10,8 +10,7 @@ import {NgClass} from '@angular/common';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
-  private accountService = inject(AccountService);
-  loggedIn = false;
+  accountService = inject(AccountService);
   isDropdownOpen = false;
   model: any = {};
 
@@ -19,8 +18,7 @@ export class NavComponent {
     this.accountService.login(this.model).subscribe({
       next: response => {
         console.log(response);
-        this.loggedIn = true;
-        this.isDropdownOpen = true;
+        this.isDropdownOpen = false;
       },
       error: error => {
         console.log(error);
@@ -29,8 +27,7 @@ export class NavComponent {
   }
 
   logout() {
-    this.loggedIn = false;
-    this.isDropdownOpen = false;
+    this.accountService.logout();
   }
 
   toggleDropdown() {

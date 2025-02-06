@@ -21,6 +21,7 @@ body {
   align-items: center;
   padding: 5px 10px;
   box-sizing: border-box;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .nav-list {
@@ -91,7 +92,7 @@ body {
 
 .dropdown-toggle {
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 8px 10px;
   background-color: transparent;
   border: none;
   font-size: 16px;
@@ -106,6 +107,7 @@ body {
 }
 
 .dropdown-arrow {
+  font-size: 12px;
   transition: transform 0.3s ease;
   cursor: pointer;
   display: inline-block;
