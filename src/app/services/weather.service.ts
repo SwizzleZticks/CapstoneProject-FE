@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import {inject, Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class WeatherService {
 
   private http = inject(HttpClient);
-  baseUrl = 'https://localhost:7074/api/weather/'; 
+  baseUrl = 'https://localhost:7074/api/weather/';
 
   getDailyWeather() {
     return this.http.get(this.baseUrl + 'daily');
