@@ -1,3 +1,5 @@
+import {Location} from './location';
+
 export interface User {
     username?:  string;
     password?:  string;
