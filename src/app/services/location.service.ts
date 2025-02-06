@@ -9,7 +9,7 @@ import { Location } from '../interfaces/location';
 export class LocationService {
 
   private http = inject(HttpClient);
-  baseUrl = 'https://localhost:7074/api/locations/'; 
+  baseUrl = 'https://localhost:7074/api/locations/';
 
   getAllLocations(): Observable<Location[]> {
     return this.http.get<Location[]>(this.baseUrl);
@@ -23,9 +23,9 @@ export class LocationService {
     return this.http.post<Location>(this.baseUrl, newLocation);
   }
 
-  updateLocation(updatedLocation: Location): Observable<Location> {
+ /* updateLocation(updatedLocation: Location): Observable<Location> {
     return this.http.put<Location>(`${this.baseUrl}${updatedLocation.locationId}`, updatedLocation);
-  }
+  }*/
 
   deleteLocation(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}${id}`);
