@@ -1,13 +1,16 @@
 <nav class="navbar">
   <ul class="nav-list">
     <li>
-      <a href="/" class="nav-item active">Today</a>
+      <a class="nav-item active">Home</a>
     </li>
     <li>
-      <a href="/" class="nav-item active">Hourly</a>
+      <a class="nav-item active">Today</a>
     </li>
     <li>
-      <a href="/" class="nav-item active">7-Day</a>
+      <a class="nav-item active">Hourly</a>
+    </li>
+    <li>
+      <a class="nav-item active">7-Day</a>
     </li>
   </ul>
 
@@ -15,7 +18,7 @@
   @if (accountService.currentUser()) {
     <div class="dropdown">
       <a href="#" class="dropdown-toggle" (click)="toggleDropdown()">
-        Welcome {{ model.username }}
+        Profile
       </a>
 
       <span class="dropdown-arrow" [class.rotate]="isDropdownOpen" (click)="toggleDropdown()">▼</span>
@@ -30,17 +33,17 @@
   }
 
   @if(!accountService.currentUser()) {
-  <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form">
-    <input name="username"
-           [(ngModel)]="model.username"
-           class="form-input"
-           placeholder="Username">
-    <input name="password"
-           [(ngModel)]="model.password"
-           class="form-input"
-           placeholder="Password"
-           type="password">
-    <button class="form-button" type="submit">Login</button>
-  </form>
+    <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form">
+      <input name="username"
+             [(ngModel)]="user.username"
+             class="form-input"
+             placeholder="Username">
+      <input name="password"
+             [(ngModel)]="user.password"
+             class="form-input"
+             placeholder="Password"
+             type="password">
+      <button class="form-button" type="submit">Login</button>
+    </form>
   }
 </nav>

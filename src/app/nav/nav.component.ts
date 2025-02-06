@@ -1,7 +1,8 @@
-import {Component, inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {AccountService} from '../services/account.service';
-import {NgClass} from '@angular/common';
+import { AccountService } from '../services/account.service';
+import { NgClass } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -12,10 +13,12 @@ import {NgClass} from '@angular/common';
 export class NavComponent {
   accountService = inject(AccountService);
   isDropdownOpen = false;
-  model: any = {};
+  user: any = {};
+
+  constructor(private router: Router) {}
 
   login(){
-    this.accountService.login(this.model).subscribe({
+    this.accountService.login(this.user).subscribe({
       next: response => {
         console.log(response);
         this.isDropdownOpen = false;
@@ -33,4 +36,5 @@ export class NavComponent {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
+
 }

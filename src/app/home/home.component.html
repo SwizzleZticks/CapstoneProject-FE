@@ -1,0 +1,18 @@
+<div class="container">
+  <div style="text-align: center;">
+
+    @if(!registerMode){
+    <h1>Find your local weather</h1>
+    <p class="lead">Create an account to view your weather...</p>
+    <div class="text-center">
+      <button (click)="registerToggle()" class="register-btn">Register</button>
+    </div>
+    } @else {
+      <div class="container">
+        <div class="row">
+          <app-register-form (cancelRegister)="cancelRegisterMode($event)"/>
+        </div>
+      </div>
+    }
+  </div>
+</div>
