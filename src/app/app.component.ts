@@ -1,24 +1,20 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NavComponent } from './nav/nav.component';
-import { DailyWeatherComponent } from "./component/daily-weather/daily-weather.component";
-import { HttpClient } from '@angular/common/http';
 import { AccountService } from './services/account.service';
+import {FormsModule} from '@angular/forms';
+import {NavComponent} from './nav/nav.component';
+import {RouterOutlet} from '@angular/router';
+import {HomeComponent} from './home/home.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavComponent, DailyWeatherComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [FormsModule, NavComponent, RouterOutlet, HomeComponent,]
 })
 export class AppComponent implements OnInit {
-  http = inject(HttpClient);
   private accountService = inject(AccountService);
-  title = 'Capstone Weather';
-  users: any;
 
   ngOnInit() {
-    this.getUsers();
     this.setCurrentUser()
   }
 
@@ -31,11 +27,4 @@ export class AppComponent implements OnInit {
     this.accountService.currentUser.set(user);
   }
 
-  getUsers(){
-    this.http.get('http://localhost:5001/api/User').subscribe({
-      next: response => this.users = response,
-      error: error => console.log(error),
-      complete: () => console.log('Request has completed')
-    })
-  }
 }
