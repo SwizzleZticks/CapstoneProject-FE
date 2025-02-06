@@ -1,0 +1,163 @@
+body {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: lightgray;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: auto;
+  padding: 20px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  margin: 5rem auto;
+  border: 2px solid #444;
+}
+
+.title {
+  color: #444;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin: auto;
+
+}
+
+.subtitle {
+  color: #444;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: auto;
+}
+
+.input-container {
+  width: 75%;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.ic1 {
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ic2 {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  color: #444;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  width: 120px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.input {
+  background-color: #555;
+  border: 2px solid #333;
+  border-radius: 12px;
+  box-sizing: border-box;
+  color: #f8f8f8;
+  font-size: 16px;
+  height: 40px;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.input:focus {
+  border: 2px solid lightseagreen;
+}
+
+.cut {
+  background-color: lightgray;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.location-container {
+  margin-bottom: 20px;
+  border: 2px solid #555;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.add-location-btn {
+  width: 50%;
+  padding: 10px;
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px auto 10px auto;
+  transition: background-color 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.add-location-btn:hover {
+  background-color: forestgreen;
+}
+
+
+.form-btn {
+  width: 50%;
+  padding: 10px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.form-btn:hover {
+  background-color: lightseagreen;
+}
+
+button[type="submit"]:last-child {
+  background-color: darkred;
+}
+
+button[type="submit"]:last-child:hover {
+  background-color: #dc3545;
+}

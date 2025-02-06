@@ -13,8 +13,8 @@ export class AccountService {
   currentUser = signal<User | null>(null);
   newUser = signal<User | null>(null);
 
-  login(model: any){
-    return this.http.post<User>(this.baseUrl + 'Account/login', model).pipe(
+  login(user: any){
+    return this.http.post<User>(this.baseUrl + 'Account/login', user).pipe(
       map(user => {
         if (user) {
           localStorage.setItem("user", JSON.stringify(user));
@@ -29,11 +29,14 @@ export class AccountService {
     this.currentUser.set(null);
   }
 
-  register(user: User){
-    this.http.post<User>(this.baseUrl + 'Account/register', user).subscribe(
-      (response) => {
-        this.newUser.set(user);
-      }
+  register(user: any){
+    return this.http.post<User>(this.baseUrl + 'Account/register', user).pipe(
+      map(user => {
+        if (user) {
+          localStorage.setItem("user", JSON.stringify(user));
+          this.currentUser.set(user);
+        }
+      })
     )
   }
 }
