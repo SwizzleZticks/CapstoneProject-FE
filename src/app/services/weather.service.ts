@@ -19,4 +19,5 @@ export class WeatherService {
 
   getHourlyWeather() {
     return this.http.get(this.baseUrl + 'hourly');
+  }
 }
