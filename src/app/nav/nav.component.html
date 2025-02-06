@@ -12,7 +12,7 @@
   </ul>
 
 
-  @if (loggedIn) {
+  @if (accountService.currentUser()) {
     <div class="dropdown">
       <a href="#" class="dropdown-toggle" (click)="toggleDropdown()">
         Welcome {{ model.username }}
@@ -29,7 +29,7 @@
     </div>
   }
 
-  @if(!loggedIn) {
+  @if(!accountService.currentUser()) {
   <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form">
     <input name="username"
            [(ngModel)]="model.username"

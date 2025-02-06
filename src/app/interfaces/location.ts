@@ -1,7 +1,5 @@
-import { User } from "./user";
-
 export interface Location {
-    locationId:     number;     // Location ID for specified location
+    locationId: any;
     city:           string;     // Requested City
     state:          string;     // Requested state
 }
