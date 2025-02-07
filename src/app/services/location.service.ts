@@ -8,7 +8,7 @@ import { Location } from '../interfaces/location';
 })
 export class LocationService {
 
-  private baseUrl = 'https://localhost:7074/api/locations'; 
+  private baseUrl = 'http://localhost:5001/api/Location'; 
 
   private states: string[] = [
     'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID',
