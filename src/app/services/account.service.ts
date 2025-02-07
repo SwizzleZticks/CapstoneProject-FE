@@ -1,7 +1,8 @@
-import {inject, Injectable, signal, WritableSignal} from '@angular/core';
+import {inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../interfaces/user';
 import {map} from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,13 @@ export class AccountService {
 
   currentUser = signal<User | null>(null);
   newUser = signal<User | null>(null);
+
+  constructor() {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      this.currentUser.set(JSON.parse(storedUser));
+    }
+  }
 
   login(user: any){
     return this.http.post<User>(this.baseUrl + 'Account/login', user).pipe(
@@ -38,5 +46,9 @@ export class AccountService {
         }
       })
     )
+  }
+
+  getUser(): User | null {
+    return this.currentUser();
   }
 }

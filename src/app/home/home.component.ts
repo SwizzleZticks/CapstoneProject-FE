@@ -1,7 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {RegisterFormComponent} from '../register-form/register-form.component';
 import {HttpClient} from '@angular/common/http';
-import {AccountService} from '../services/account.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +12,7 @@ import {AccountService} from '../services/account.service';
 })
 export class HomeComponent implements OnInit {
   http = inject(HttpClient);
-  registerMode = false;
+  registerMode = true;
   users: any;
 
   ngOnInit() {
@@ -21,6 +20,7 @@ export class HomeComponent implements OnInit {
   }
   registerToggle() {
     this.registerMode = !this.registerMode;
+    console.log(this.registerMode);
   }
 
   cancelRegisterMode(event: boolean) {

@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AccountService } from '../services/account.service';
 import { NgClass } from '@angular/common';
-import { Router } from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-nav',
-  imports: [FormsModule, NgClass],
+  imports: [FormsModule, NgClass, RouterLink],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
@@ -31,6 +31,7 @@ export class NavComponent {
 
   logout() {
     this.accountService.logout();
+    this.router.navigate(['/home']);
   }
 
   toggleDropdown() {
